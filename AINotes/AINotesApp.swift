@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct AINotesApp: App {
+    @StateObject var dataController = NotesDataController.shared
+        
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            NavigationStack {
+                NoteListView()
+            }
         }
     }
 }
